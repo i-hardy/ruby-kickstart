@@ -6,3 +6,12 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count(string)
+    hash = {}
+    ary = string.downcase.split
+    ary.each do |word|
+      hash[word] = ary.count(word)
+    end
+    hash
+end
