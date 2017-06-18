@@ -17,3 +17,18 @@
 # match_maker true,  true,  true, true, nil     # => [false, true]
 # match_maker true,  true,  true, 0, nil        # => [false, true]
 
+def match_maker(determinor, *args)
+  to_return = []
+  args.each_slice 2 do |first, last|
+  first  = !!first
+  last   = !!last
+    if determinor
+      result = first != last
+      to_return.push(result)
+    else
+      result = first == last
+      to_return.push(result)
+    end
+  end
+  to_return
+end
